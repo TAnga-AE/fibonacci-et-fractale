@@ -1,7 +1,7 @@
 #include <iostream>
 #include <complex>
 
-void computeMandelbrot(double cx, double cy, int iterations) {
+void Mandelbrot(double cx, double cy, int iterations) {
     std::complex<double> z(0, 0); // Initialisation de z avec z0 = 0
     std::complex<double> c(cx, cy); // Initialisation de c avec les coordonnées
 
@@ -31,7 +31,7 @@ int main() {
     std::cout << "Entrez le nombre d'itérations (n): ";
     std::cin >> n;
 
-    computeMandelbrot(cx, cy, n);
+    Mandelbrot(cx, cy, n);
     
     return 0;
 }
