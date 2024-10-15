@@ -1,20 +1,19 @@
 #include <iostream>
 #include <complex>
 
-void Mandelbrot(double cx, double cy, int iterations) {
+void Mendelbrot(double cx, double cy, int iterations) {
     std::complex<double> z(0, 0); // Initialisation de z avec z0 = 0
     std::complex<double> c(cx, cy); // Initialisation de c avec les coordonnées
 
-    std::cout << "Suite de Mandelbrot pour C(" << cx << ", " << cy << "):\n";
+    std::cout << "Suite de Mendelbrot pour C(" << cx << ", " << cy << "):\n";
     
     for (int n = 0; n < iterations; ++n) {
         // Calculer le module de z
-        double modulus = std::norm(z); // |z|^2 = z_r^2 + z_i^2
-        if (modulus >= 4) {
+        double module = std::norm(z); // |z|^2 = z_r^2 + z_i^2
+        if (module >= 4) {
             break; // Si le module est supérieur ou égal à 4, on sort de la boucle
         }
-        
-        std::cout << "z(" << n << ") = (" << z.real() << ", " << z.imag() << ")\n";
+       
         
         // Calculer zn+1
         std::complex<double> zn_next = z * z + c; // zn+1 = zn^2 + c
@@ -31,7 +30,7 @@ int main() {
     std::cout << "Entrez le nombre d'itérations (n): ";
     std::cin >> n;
 
-    Mandelbrot(cx, cy, n);
+    Mendelbrot(cx, cy, n);
     
     return 0;
 }
